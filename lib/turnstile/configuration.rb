@@ -4,7 +4,10 @@ class Turnstile::Configuration
   DEFAULTS = {
     enabled: true,
     server_url: "https://challenges.cloudflare.com/turnstile/v0/siteverify",
-    script_url: "https://challenges.cloudflare.com/turnstile/v0/api.js"
+    script_url: "https://challenges.cloudflare.com/turnstile/v0/api.js",
+    language: "en-US",
+    size: "normal",
+    theme: "auto"
   }.freeze
 
   attr_accessor :site_key, :secret_key, :enabled, :script_url, :server_url, :on_failure
