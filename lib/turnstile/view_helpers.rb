@@ -16,11 +16,13 @@ module Turnstile::ViewHelpers
 
   def captcha_placeholder_tag(options = {})
     action = options.delete(:action)
+    language = options.delete(:language)
     attrs = {
       class: "cf-turnstile",
       data: {
         action: action,
-        sitekey: Turnstile.configuration.site_key
+        sitekey: Turnstile.configuration.site_key,
+        language: language
       }
     }.deep_merge(options)
 
