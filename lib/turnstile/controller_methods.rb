@@ -6,7 +6,7 @@ module Turnstile::ControllerMethods
 
     options = args.extract_options!
     verification = Turnstile::Verification.new(response: params["cf-turnstile-response"], remote_ip: request.remote_ip)
-
+    Rails.logger.debug "Turnstile: Verifying captcha with #{verification.inspect}"
     return true if verification.success?
 
     Turnstile.configuration.on_failure&.call(verification)
