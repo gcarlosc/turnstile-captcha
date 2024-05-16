@@ -27,7 +27,7 @@ class Turnstile::Verification
 
   def perform_verification
     client.post \
-      perform_verification,
+      Turnstile.configuration.server_url,
       response: response,
       secret: Turnstile.configuration.secret_key,
       remoteip: remote_ip
