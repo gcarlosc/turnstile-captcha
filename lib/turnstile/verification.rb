@@ -26,7 +26,7 @@ class Turnstile::Verification
   private
 
   def perform_verification
-    Rails.logger.debug "Turnstile perform_verification: #{perform_verification}, #{response}, #{Turnstile.configuration.secret_key}, #{remote_ip}"
+    Rails.logger.debug "Turnstile perform_verification: #{response}, #{Turnstile.configuration.secret_key}, #{remote_ip}"
     client.post \
       perform_verification,
       response: response,
